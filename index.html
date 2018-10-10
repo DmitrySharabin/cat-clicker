@@ -18,13 +18,13 @@
   </header>
   <main id="cat-clicker">
     <ul>
-      <li v-for="(cat, index) in cats" @click="makeVisible(index)">{{ cat.name }}</li>
+      <li v-for="cat in cats" @click="currentCat = cat">{{ cat.name }}</li>
     </ul>
     <div>
-      <figure v-for="(cat, index) in cats" v-show="cat.visible">
-        <figcaption>{{ cat.name }}</figcaption>
-        <img @click="incCounter(index)" :src="cat.src" alt="Picture of some cat" title="Click Me!">
-        <p>{{ cat.name }} was clicked <strong>{{ cat.clickCounter }}</strong> {{ cat.clickCounter === 1 ? 'time' : 'times'}}.</p>
+      <figure>
+        <figcaption>{{ currentCat.name }}</figcaption>
+        <img @click="incCounter()" :src="currentCat.src" alt="Picture of some cat" title="Click Me!">
+        <p>{{ currentCat.name }} was clicked <strong>{{ currentCat.clickCounter }}</strong> {{ currentCat.clickCounter === 1 ? 'time' : 'times'}}.</p>
       </figure>
     </div>
   </main>

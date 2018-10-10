@@ -1,49 +1,39 @@
-new Vue({
+const catClicker = new Vue({
   el: '#cat-clicker',
   data: {
+    currentCat: {},
     cats: [{
       name: 'Tom',
       clickCounter: 0,
-      src: './images/tom.jpg',
-      visible: false
+      src: './images/tom.jpg'
     }, {
       name: 'Alice',
       clickCounter: 0,
-      src: './images/alice.jpg',
-      visible: false
+      src: './images/alice.jpg'
     },
     {
       name: 'Tigger',
       clickCounter: 0,
-      src: './images/tigger.jpg',
-      visible: false
+      src: './images/tigger.jpg'
     }, {
       name: 'Kitty',
       clickCounter: 0,
-      src: './images/kitty.jpg',
-      visible: false
+      src: './images/kitty.jpg'
     }, {
       name: 'Oliver',
       clickCounter: 0,
-      src: './images/oliver.jpg',
-      visible: false
+      src: './images/oliver.jpg'
     }, {
       name: 'Bella',
       clickCounter: 0,
-      src: './images/bella.jpg',
-      visible: false
+      src: './images/bella.jpg'
     }]
   },
   methods: {
-    incCounter(index) {
-      this.cats[index].clickCounter += 1;
-    },
-
-    makeVisible(index) {
-      this.cats.forEach(cat => {
-        cat.visible = false;
-      });
-      this.cats[index].visible = true;
+    incCounter() {
+      this.currentCat.clickCounter += 1;
     }
   }
 });
+
+catClicker.currentCat = catClicker.cats[0];
