@@ -17,11 +17,14 @@
     <h1>Cat Clicker</h1>
   </header>
   <main id="cat-clicker">
-    <div v-for="(cat, index) in cats">
-      <figure>
+    <ul>
+      <li v-for="(cat, index) in cats" @click="makeVisible(index)">{{ cat.name }}</li>
+    </ul>
+    <div>
+      <figure v-for="(cat, index) in cats" v-show="cat.visible">
         <figcaption>{{ cat.name }}</figcaption>
         <img @click="incCounter(index)" :src="cat.src" alt="Picture of some cat" title="Click Me!">
-        <p>Clicked: <strong>{{ cat.clickCounter }}</strong> {{ cat.clickCounter === 1 ? 'time' : 'times'}}.</p>
+        <p>{{ cat.name }} was clicked <strong>{{ cat.clickCounter }}</strong> {{ cat.clickCounter === 1 ? 'time' : 'times'}}.</p>
       </figure>
     </div>
   </main>

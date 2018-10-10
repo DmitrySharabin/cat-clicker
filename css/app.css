@@ -1,17 +1,50 @@
-#cat-clicker {
-  display: flex;
+:root {
+  --themeColor: hsl(226, 65%, 50%);
+  --bgColor: hsl(226, 65%, 30%);
+}
+
+div {
+  width: 485px;
+  height: 405px;
+  border: 1px dashed #333;
+  border-radius: 10px;
+}
+
+ul {
+  list-style-type: none;
+  padding: 0;
+  display: grid;
+  grid-template-columns: repeat(3, 100px);
+  grid-template-rows: repeat(2, 40px);
+  grid-gap: 10px;
+  font-size: 1.3em;
+}
+
+li {
+  text-align: center;
+  padding: 5px;
+  background-color: var(--bgColor, #333);
+  border-radius: 5px;
+  color: #fff;
+  cursor: pointer;
+  transition: all 0.3s;
+}
+
+li:hover {
+  background-color: var(--themeColor, #333);
 }
 
 img {
   width: 100%;
-  border: 3px solid hsl(226, 65%, 70%);
+  max-width: 400px;
+  border: 3px solid var(--themeColor, #333);
   transform: scale(1);
   transition: transform 0.2s;
 }
 
 img:hover {
   cursor: pointer;
-  transform: scale(1.05);
+  transform: scale(1.03);
 }
 
 figcaption {
