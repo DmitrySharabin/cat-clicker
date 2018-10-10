@@ -1,11 +1,19 @@
 new Vue({
   el: '#cat-clicker',
   data: {
-    counter: 0
+    cats: [{
+      name: 'Tom',
+      clickCounter: 0,
+      src: './images/tom.jpg'
+    }, {
+      name: 'Alice',
+      clickCounter: 0,
+      src: './images/alice.jpg'
+    }]
   },
   methods: {
-    incCounter() {
-      this.counter += 1;
+    incCounter(index) {
+      this.cats[index].clickCounter += 1;
     }
   }
 });

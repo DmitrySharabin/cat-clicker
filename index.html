@@ -17,11 +17,13 @@
     <h1>Cat Clicker</h1>
   </header>
   <main id="cat-clicker">
-    <figure>
-      <img @click="incCounter" src="./images/cat.jpg" alt="Picture of a cat" title="Click Me!">
-    </figure>
-    <figcaption>Fig. 1 — Cat. Source: https://wallbox.ru/wallpapers/main/201546/13dcd7162ea7a31.jpg</figcaption>
-    <p>You clicked the image <strong>{{ counter }}</strong> {{ counter === 1 ? 'time' : 'times'}}.</p>
+    <div v-for="(cat, index) in cats">
+      <figure>
+        <figcaption>{{ cat.name }}</figcaption>
+        <img @click="incCounter(index)" :src="cat.src" alt="Picture of some cat" title="Click Me!">
+        <p>Clicked: <strong>{{ cat.clickCounter }}</strong> {{ cat.clickCounter === 1 ? 'time' : 'times'}}.</p>
+      </figure>
+    </div>
   </main>
   <script src="js/app.js"></script>
 </body>

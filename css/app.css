@@ -1,4 +1,9 @@
+#cat-clicker {
+  display: flex;
+}
+
 img {
+  width: 100%;
   border: 3px solid hsl(226, 65%, 70%);
   transform: scale(1);
   transition: transform 0.2s;
@@ -11,6 +16,7 @@ img:hover {
 
 figcaption {
   font-style: italic;
+  margin-bottom: 0.5em;
 }
 
 strong {
