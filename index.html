@@ -25,6 +25,23 @@
       <img class="card-image" @click="incCounter()" :src="currentCat.src" alt="Picture of some cat" title="Click Me!">
       <p>{{ currentCat.name }} was clicked <strong class="counter">{{ currentCat.clickCounter }}</strong> {{ currentCat.clickCounter === 1 ? 'time' : 'times'}}.</p>
     </figure>
+    <button @click="isAdminModeOn = true">Admin</button>
+    <form @submit.prevent="updateCat" @reset.prevent="isAdminModeOn = false" class="admin-panel" v-if="isAdminModeOn">
+      <label>
+        Name:
+        <input type="text" :value="currentCat.name">
+      </label>
+      <label>
+        URL:
+        <input type="text" :value="currentCat.src">
+      </label>
+      <label>
+        Clicks:
+        <input type="number" :value="currentCat.clickCounter" min="0">
+      </label>
+      <button type="reset">Cancel</button>
+      <button type="submit">Save</button>
+    </form>
   </main>
   <script src="js/app.js"></script>
 </body>

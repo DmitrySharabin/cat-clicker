@@ -1,7 +1,8 @@
 const catClicker = new Vue({
   el: '#cat-clicker',
   data: {
-    currentCat: {},
+    currentCat: null,
+
     cats: [{
       name: 'Tom',
       clickCounter: 0,
@@ -27,13 +28,22 @@ const catClicker = new Vue({
       name: 'Bella',
       clickCounter: 0,
       src: './images/bella.jpg'
-    }]
+    }],
+
+    isAdminModeOn: false
   },
   methods: {
     incCounter() {
       this.currentCat.clickCounter += 1;
+    },
+
+    updateCat(event) {
+      this.currentCat.name = event.srcElement[0].value;
+      this.currentCat.src = event.srcElement[1].value;
+      this.currentCat.clickCounter = Number(event.srcElement[2].value);
+      this.isAdminModeOn = false;
     }
   }
 });
 
-catClicker.currentCat = catClicker.cats[0];
+catClicker.currentCat = catClicker.cats[parseInt(Math.random() * 6)];

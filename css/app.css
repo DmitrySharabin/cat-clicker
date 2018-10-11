@@ -6,7 +6,7 @@
 .cat-card {
   width: 450px;
   height: 390px;
-  margin: 0;
+  margin: 0 0 20px;
   padding: 16px 0 0 40px;
   border: 1px dashed #333;
   border-radius: 10px;
@@ -16,7 +16,7 @@
   list-style-type: none;
   padding: 0;
   display: grid;
-  grid-template-columns: repeat(3, 100px);
+  grid-template-columns: repeat(3, minmax(100px, max-content));
   grid-template-rows: repeat(2, 40px);
   grid-gap: 10px;
   font-size: 1.3em;
@@ -44,7 +44,7 @@
   transition: transform 0.2s;
 }
 
-.cat-image:hover {
+.card-image:hover {
   cursor: pointer;
   transform: scale(1.03);
 }
@@ -56,4 +56,17 @@
 
 .counter {
   font-size: 1.2em;
+}
+
+.admin-panel {
+  margin-top: 20px;
+  width: 140px;
+  display: grid;
+  grid-template-columns: repeat(2, 65px);
+  grid-template-rows: repeat(4, auto);
+  grid-gap: 10px;
+}
+
+.admin-panel label {
+  grid-column: 1 / -1;
 }
