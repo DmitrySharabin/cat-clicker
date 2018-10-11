@@ -44,7 +44,7 @@
   transition: transform 0.2s;
 }
 
-.cat-image:hover {
+.card-image:hover {
   cursor: pointer;
   transform: scale(1.03);
 }
