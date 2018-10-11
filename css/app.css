@@ -3,14 +3,16 @@
   --bgColor: hsl(226, 65%, 30%);
 }
 
-div {
-  width: 485px;
-  height: 405px;
+.cat-card {
+  width: 450px;
+  height: 390px;
+  margin: 0;
+  padding: 16px 0 0 40px;
   border: 1px dashed #333;
   border-radius: 10px;
 }
 
-ul {
+.cats-list {
   list-style-type: none;
   padding: 0;
   display: grid;
@@ -20,7 +22,7 @@ ul {
   font-size: 1.3em;
 }
 
-li {
+.cat-name {
   text-align: center;
   padding: 5px;
   background-color: var(--bgColor, #333);
@@ -30,11 +32,11 @@ li {
   transition: all 0.3s;
 }
 
-li:hover {
+.cat-name:hover {
   background-color: var(--themeColor, #333);
 }
 
-img {
+.card-image {
   width: 100%;
   max-width: 400px;
   border: 3px solid var(--themeColor, #333);
@@ -42,16 +44,16 @@ img {
   transition: transform 0.2s;
 }
 
-img:hover {
+.cat-image:hover {
   cursor: pointer;
   transform: scale(1.03);
 }
 
-figcaption {
+.card-caption {
   font-style: italic;
   margin-bottom: 0.5em;
 }
 
-strong {
+.counter {
   font-size: 1.2em;
 }
