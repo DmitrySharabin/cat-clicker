@@ -46,4 +46,4 @@ const catClicker = new Vue({
   }
 });
 
-catClicker.currentCat = catClicker.cats[parseInt(Math.random() * 6)];
+catClicker.currentCat = catClicker.cats[Math.floor(Math.random() * 6)];
